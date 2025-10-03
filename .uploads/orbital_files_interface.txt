@@ -1,0 +1,40 @@
+ATBD: PRJ1970-SPE-0034-E2EIS geometry module ATBD_A1_draft10jul2025.pdf
+
+Utiliser librairie python pour le passage DataClass <-> XML (lxml)
+INterface : classe Orbit et attitude sequence avec des methodes save et load XML
+
+
+Loader la sequence xml -> numpy -> orekit (faire uné methode to_abosultePVcoordinates & timestampedangularcoordinates (absolutePVcoordinate classe d'orekit)
+
+Quand on load un xml on pourrait véififier que toutes les conditions ESA FFS3.0 sont respectés
+
+
+Dans la norme FFS3.0: document  PE-ID-ESA-GS-584-EO_Mission_SW_File_Format_Specs_latest.pdf
+On implemente: 
+1) orbit state vector
+2) attitude quaternion file
+
+Fait/à faire: 
+
+- ✅ Copier les fichiers orekit_date.py, orekit_singleton.py, reference_system.py depuis la branche ROE sequencer de Thomas
+- ✅ Rajouter dans les requirements la version de lxml du poetry de hyp4uapi
+- ✅ Copier les exemples de fichiers de validation pour les normes FFS3.0 (File Format Standard version 3) orbit&attitude dans le repo du projet
+		-> https://eop-cfi.esa.int/CFI/EE_CFI_SCHEMAS/ 
+- ✅ Lecture de l'ATBD PRJ1970-SPE-0034-E2EIS geometry module ATBD_A1_draft10jul2025.pdf pour la partie à implémenter 
+- ✅ Lire le fichier de standard format XML pour l'ESA
+
+- ✅ Créer classe OrbitSequence et AttitudeSequence
+- ✅ Implémenter fonction load
+- ✅ Implémenter fonction to_numpy_arrays()
+- Implémenter fonction save
+
+
+
+This directory contains examples of files compliant with
+Earth Observation Ground Segment File Format Standard version 2
+
+Validating ESA schema
+Orbit State Vector File  | EO_OPER_AUX_ORBRES_0300.XSD
+Attitude Quaternion File | EO_OPER_INT_ATTREF_0301.XSD 
+
+
